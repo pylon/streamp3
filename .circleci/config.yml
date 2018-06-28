@@ -23,6 +23,9 @@ jobs:
       - run: echo 'export PYTHONPATH=~/repo' >> $BASH_ENV
       - run: |
           source ~/venv/bin/activate
+          python setup.py build_ext -i
+      - run: |
+          source ~/venv/bin/activate
           flake8
       - run: |
           source ~/venv/bin/activate
