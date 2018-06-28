@@ -43,7 +43,7 @@ pylint==1.9.2
 pytest-cov==2.5.1
 pytest-watch==4.2.0
 pytest==3.6.2
-pyyaml==4.1               # via watchdog
+pyyaml==3.12              # via watchdog
 requests-toolbelt==0.8.0  # via twine
 requests==2.19.1
 resampy==0.2.1            # via librosa
