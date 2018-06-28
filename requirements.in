@@ -1,0 +1,24 @@
+#
+# requirements.in - explicit python dependencies
+#
+# to update requirements.txt, run:
+#
+#    pip-compile requirements.in
+#
+
+cython
+flake8
+pip-tools
+pylint
+twine
+
+mock
+pytest
+pytest-cov
+pytest-watch
+
+requests
+tqdm
+
+pyaudio
+librosa
