@@ -8,35 +8,28 @@ argh==0.26.2              # via watchdog
 astroid==1.6.5            # via pylint
 atomicwrites==1.1.5       # via pytest
 attrs==18.1.0             # via pytest
-audioread==2.1.6          # via librosa
 certifi==2018.4.16        # via requests
 chardet==3.0.4            # via requests
 click==6.7                # via pip-tools
 colorama==0.3.9           # via pytest-watch
-coverage==4.5.1           # via pytest-cov
+coverage==4.5.1           # via coveralls, pytest-cov
+coveralls==1.3.0
 cython==0.28.3
-decorator==4.3.0          # via librosa
-docopt==0.6.2             # via pytest-watch
+docopt==0.6.2             # via coveralls, pytest-watch
 first==2.0.1              # via pip-tools
 flake8==3.5.0
 idna==2.7                 # via requests
 isort==4.3.4              # via pylint
-joblib==0.12.0            # via librosa
 lazy-object-proxy==1.3.1  # via astroid
-librosa==0.6.1
-llvmlite==0.23.2          # via numba
 mccabe==0.6.1             # via flake8, pylint
 mock==2.0.0
 more-itertools==4.2.0     # via pytest
-numba==0.38.1             # via librosa, resampy
-numpy==1.14.5             # via librosa, numba, resampy, scipy
 pathtools==0.1.2          # via watchdog
 pbr==4.0.4                # via mock
 pip-tools==2.0.2
 pkginfo==1.4.2            # via twine
 pluggy==0.6.0             # via pytest
 py==1.5.4                 # via pytest
-pyaudio==0.2.11
 pycodestyle==2.3.1        # via flake8
 pyflakes==1.6.0           # via flake8
 pylint==1.9.2
@@ -45,12 +38,9 @@ pytest-watch==4.2.0
 pytest==3.6.2
 pyyaml==3.12              # via watchdog
 requests-toolbelt==0.8.0  # via twine
-requests==2.19.1
-resampy==0.2.1            # via librosa
-scikit-learn==0.19.1      # via librosa
-scipy==1.1.0              # via librosa, resampy
-six==1.11.0               # via astroid, librosa, mock, more-itertools, pip-tools, pylint, pytest, resampy
-tqdm==4.23.4
+requests==2.19.1          # via coveralls, requests-toolbelt, twine
+six==1.11.0               # via astroid, mock, more-itertools, pip-tools, pylint, pytest
+tqdm==4.23.4              # via twine
 twine==1.11.0
 urllib3==1.23             # via requests
 watchdog==0.8.3           # via pytest-watch

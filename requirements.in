@@ -12,13 +12,8 @@ pip-tools
 pylint
 twine
 
+coveralls
 mock
 pytest
 pytest-cov
 pytest-watch
-
-requests
-tqdm
-
-pyaudio
-librosa

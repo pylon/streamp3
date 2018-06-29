@@ -3,8 +3,9 @@
 This library implements streaming MP3 decompression using the LAME library.
 
 ## Status
-[![PyPI version](https://badge.fury.io/py/streamp3.svg)](https://badge.fury.io/py/streamp3)
+[![PyPI](https://badge.fury.io/py/streamp3.svg)](https://badge.fury.io/py/streamp3)
 [![CircleCI](https://circleci.com/gh/pylon/streamp3.svg?style=shield)](https://circleci.com/gh/pylon/streamp3)
+[![Coveralls](https://coveralls.io/repos/github/pylon/streamp3/badge.svg?branch=master)](https://coveralls.io/github/pylon/streamp3?branch=master)
 
 ## Installation
 
