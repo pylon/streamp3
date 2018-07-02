@@ -11,6 +11,7 @@ flake8
 pip-tools
 pylint
 twine
+wheel
 
 coveralls
 mock
