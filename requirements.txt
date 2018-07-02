@@ -44,4 +44,5 @@ tqdm==4.23.4              # via twine
 twine==1.11.0
 urllib3==1.23             # via requests
 watchdog==0.8.3           # via pytest-watch
+wheel==0.31.1
 wrapt==1.10.11            # via astroid
