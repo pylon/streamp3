@@ -15,7 +15,7 @@ MP3_BUFFER_SIZE = 8192
 PCM_BUFFER_SIZE = 65536
 
 
-class MP3Decoder(object):
+class MP3Decoder:
     """ streaming MP3 decoder class
 
     This class attaches a binary MP3 stream and decodes it into a sequence
