@@ -87,3 +87,15 @@ def test_iterator():
             assert len(chunk) % 4 == 0
         else:
             break
+
+
+def test_iterator_with_copy():
+    decoder = MP3Decoder(open('tests/streamp3/data/stereo.mp3', 'rb'), provide_copy=True)
+    raw_data = b''
+    for chunk, raw in decoder:
+        raw_data += raw
+        assert isinstance(chunk, bytes)
+        assert len(chunk) % 4 == 0
+    ref_data = open('tests/streamp3/data/stereo.mp3', 'rb').read()
+    assert len(raw_data) == len(ref_data)
+    assert raw_data == ref_data

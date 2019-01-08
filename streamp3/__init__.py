@@ -37,16 +37,18 @@ class MP3Decoder:
 
     """
 
-    def __init__(self, stream, pcm_buffer_size=PCM_BUFFER_SIZE):
+    def __init__(self, stream, pcm_buffer_size=PCM_BUFFER_SIZE, provide_copy=False):
         if isinstance(stream, bytes):
             stream = BytesIO(stream)
 
+        self._provide_copy = provide_copy
         self._stream = stream
         self._decoder = hip.Hip()
         self._bit_rate = 0
         self._sample_rate = 0
         self._num_channels = 0
         self._mp3_buffer = b''
+        self._mp3_last_consumed_bytes_from_stream = b''
         self._pcm_lbuffer = bytearray(pcm_buffer_size)
         self._pcm_rbuffer = bytearray(pcm_buffer_size)
         self._pcm_offset = 0
@@ -121,7 +123,12 @@ class MP3Decoder:
         # advance the pcm buffer past the returned samples
         self._pcm_offset += size
 
-        return bytes(data)
+        if self._provide_copy:
+            stream_copy = self._mp3_last_consumed_bytes_from_stream
+            self._mp3_last_consumed_bytes_from_stream = b''
+            return bytes(data), stream_copy
+        else:
+            return bytes(data)
 
     def _read_id3(self):
         if not self._read_buffer():
@@ -153,6 +160,7 @@ class MP3Decoder:
                 return False
 
         # advance the buffer past the container
+        if self._provide_copy: self._mp3_last_consumed_bytes_from_stream += self._mp3_buffer[:size]
         self._mp3_buffer = self._mp3_buffer[size:]
 
         return True
@@ -212,6 +220,7 @@ class MP3Decoder:
                                                 self._pcm_rbuffer)
 
         # advance the frame buffer past the current frame
+        if self._provide_copy: self._mp3_last_consumed_bytes_from_stream += self._mp3_buffer[:frame_size]
         self._mp3_buffer = self._mp3_buffer[frame_size:]
 
         return True
