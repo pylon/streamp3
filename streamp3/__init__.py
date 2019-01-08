@@ -37,7 +37,8 @@ class MP3Decoder:
 
     """
 
-    def __init__(self, stream, pcm_buffer_size=PCM_BUFFER_SIZE, provide_copy=False):
+    def __init__(self, stream, pcm_buffer_size=PCM_BUFFER_SIZE,
+                 provide_copy=False):
         if isinstance(stream, bytes):
             stream = BytesIO(stream)
 
@@ -160,7 +161,9 @@ class MP3Decoder:
                 return False
 
         # advance the buffer past the container
-        if self._provide_copy: self._mp3_last_consumed_bytes_from_stream += self._mp3_buffer[:size]
+        if self._provide_copy:
+            self._mp3_last_consumed_bytes_from_stream += \
+                self._mp3_buffer[:size]
         self._mp3_buffer = self._mp3_buffer[size:]
 
         return True
@@ -220,7 +223,9 @@ class MP3Decoder:
                                                 self._pcm_rbuffer)
 
         # advance the frame buffer past the current frame
-        if self._provide_copy: self._mp3_last_consumed_bytes_from_stream += self._mp3_buffer[:frame_size]
+        if self._provide_copy:
+            self._mp3_last_consumed_bytes_from_stream += \
+                self._mp3_buffer[:frame_size]
         self._mp3_buffer = self._mp3_buffer[frame_size:]
 
         return True

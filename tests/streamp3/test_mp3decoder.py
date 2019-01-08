@@ -90,7 +90,8 @@ def test_iterator():
 
 
 def test_iterator_with_copy():
-    decoder = MP3Decoder(open('tests/streamp3/data/stereo.mp3', 'rb'), provide_copy=True)
+    decoder = MP3Decoder(open('tests/streamp3/data/stereo.mp3', 'rb'),
+                         provide_copy=True)
     raw_data = b''
     for chunk, raw in decoder:
         raw_data += raw
