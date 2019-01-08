@@ -52,6 +52,19 @@ with open('my.mp3', 'rb') as mp3_file:
         speaker.write(chunk)
 ```
 
+In addition to the decoded mp3 stream you can also get the
+original datafrom the compressed stream. This data can be used,
+e.g., to save a copy of the mp3 stream:
+
+```python
+    ecoder = MP3Decoder(open('tests/streamp3/data/stereo.mp3', 'rb'),
+                        provide_copy=True)
+    copy_of_compressed_data = b''
+    for decoded_data, compressed_data in decoder:
+        copy_of_compressed_data += compressed_data
+        # ...
+```
+
 ## Development
 
 ### Setup
