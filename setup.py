@@ -5,7 +5,7 @@ from distutils.core import setup
 from distutils.extension import Extension
 
 setup(name='streamp3',
-      version='0.1.5',
+      version='0.1.6',
       description="streaming mp3 decoder",
       long_description=open('README.md', 'r').read(),
       long_description_content_type='text/markdown',
@@ -14,6 +14,7 @@ setup(name='streamp3',
       author_email='brent@pylon.com',
       packages=setuptools.find_packages(),
       setup_requires=['Cython>=0.28.5'],
+      install_requires=['Cython>=0.28.5'],
       ext_modules=[Extension('lame.hip',
                              ['lame/hip.pyx'],
                              libraries=['mp3lame'])],
