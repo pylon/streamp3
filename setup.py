@@ -5,7 +5,7 @@ from distutils.core import setup
 from distutils.extension import Extension
 
 setup(name='streamp3',
-      version='0.1.6',
+      version='0.1.7',
       description="streaming mp3 decoder",
       long_description=open('README.md', 'r').read(),
       long_description_content_type='text/markdown',
