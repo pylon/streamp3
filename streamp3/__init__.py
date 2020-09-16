@@ -195,7 +195,8 @@ class MP3Decoder:
         self._num_channels = channels
 
         # calculate the size of the whole frame
-        frame_size = int(144 * bit_rate / sample_rate / (3 - channels))
+        frame_size = 1152 if version == 1 else 576
+        frame_size = bit_rate // 8 * frame_size // sample_rate
         if is_padded:
             frame_size += 1
 
