@@ -9,7 +9,21 @@ This library implements streaming MP3 decompression using the LAME library.
 
 ## Installation
 
-### Pip
+First, make sure you have the LAME libraries and headers installed.
+
+#### macOS
+
+```bash
+brew install lame
+```
+
+#### Debian/Ubuntu
+
+```bash
+apt install libmp3lame-dev
+```
+
+### Install with pip
 ```bash
 pip install streamp3
 ```
@@ -62,12 +76,6 @@ creates a virtual environment for the project and installs dependencies.
 pyenv install 3.6.4
 pyenv virtualenv 3.6.4 streamp3
 pip install -r requirements.txt
-```
-
-LAME must also be installed. This can be done on OSX via homebrew.
-
-```bash
-brew install lame
 ```
 
 ### Deployment
