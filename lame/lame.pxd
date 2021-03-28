@@ -1,4 +1,4 @@
-cdef extern from "<lame/lame.h>":
+cdef extern from "lame/lame.h":
     # lame api
     int lame_get_bitrate(int mpeg_version, int table_index)
     int lame_get_samplerate(int mpeg_version, int table_index)
