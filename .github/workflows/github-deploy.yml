@@ -39,7 +39,7 @@ jobs:
 
       - name: Install lame for Linux
         if: runner.os == 'Linux'
-        run: sudo apt-get install lame
+        run: sudo apt-get install libmp3lame-dev
 
       - name: Build wheels
         uses: joerick/cibuildwheel@v1.10.0
