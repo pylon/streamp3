@@ -37,8 +37,8 @@ jobs:
         if: runner.os == 'macOS'
         run: brew install lame
 
-      - name: Install lame for macos
-        if: runner.os == 'Ubuntu'
+      - name: Install lame for Linux
+        if: runner.os == 'Linux'
         run: sudo apt-get install lame
 
       - name: Build wheels
