@@ -49,6 +49,7 @@ jobs:
         uses: joerick/cibuildwheel@v1.10.0
         env:
           CIBW_ENVIRONMENT_MACOS: OPENBLAS="$(brew --prefix openblas)"
+          CIBW_SKIP: cp27-*
 
       - uses: actions/upload-artifact@v2
         with:
