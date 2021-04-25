@@ -25,9 +25,13 @@ jobs:
         with:
           python-version: "3.8"
 
-      - name: Install Visual C++ for Python 2.7
+      - name: Install Visual C++ for Python 3
         if: runner.os == 'Windows'
-        run: choco install vcpython27 -f -y
+        run: choco install python3 -f -y
+
+      - name: Install openblas for macos
+        if: runner.os == 'macOS'
+        run: brew install openblas
 
       - name: Install lame for Windows
         if: runner.os == 'Windows'
@@ -43,6 +47,8 @@ jobs:
 
       - name: Build wheels
         uses: joerick/cibuildwheel@v1.10.0
+        env:
+          CIBW_ENVIRONMENT_MACOS: OPENBLAS="$(brew --prefix openblas)"
 
       - uses: actions/upload-artifact@v2
         with:
