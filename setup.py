@@ -18,6 +18,6 @@ setup(name='streamp3',
       ext_modules=[Extension('lame.hip',
                              ['lame/hip.pyx'],
                              libraries=['mp3lame'])],
-      classifiers=("Programming Language :: Python :: 3",
+      classifiers=["Programming Language :: Python :: 3",
                    "License :: OSI Approved :: Apache Software License",
-                   "Operating System :: OS Independent"))
+                   "Operating System :: OS Independent"])
