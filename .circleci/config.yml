@@ -34,9 +34,6 @@ jobs:
           source ~/venv/bin/activate
           pytest --cov=streamp3
           coveralls
-      - run: |
-          source ~/venv/bin/activate
-          ls -1 */__init__.py | sed -E 's|/.*||' | xargs pylint -r n
 
 workflows:
   version: 2

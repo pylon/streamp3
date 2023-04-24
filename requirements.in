@@ -6,10 +6,8 @@
 #    pip-compile requirements.in
 #
 
-cython
+Cython==0.29.34
 flake8
-pip-tools
-pylint
 twine
 wheel
 
